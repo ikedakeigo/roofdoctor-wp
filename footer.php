@@ -4,7 +4,17 @@
   <div class="wrapper">
     <div class="footer_contents">
       <div class="footer_menu">
-        <ul class="layout_flex sb">
+      <?php
+            wp_nav_menu(
+              array(
+                'depth' => 1,
+                'theme_location' => 'drawer',
+                'container' => '',
+                'menu_class' => 'layout_flex sb',
+              )
+            )
+          ?>
+        <!-- <ul class="layout_flex sb">
           <li>
             <a href="https://maruzi-kawara.com/" class="text_link">HOME</a>
           </li>
@@ -26,7 +36,7 @@
           <li>
             <a href="https://maruzi-kawara.com/#contact" class="text_link">お問い合わせ</a>
           </li>
-        </ul>
+        </ul> -->
       </div>
       <div class="footer_info layout_flex">
         <div><a href="https://maruzi-kawara.com/" class="logo">池田瓦店</a></div>

@@ -352,6 +352,22 @@ body.active {
   content: "\f105";
 }
 
+/*===================================
+ * ページネーション
+===================================*/
+.pagenation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 63px;
+  position: relative;
+  white-space: nowrap;
+}
+.pagenation .current {
+  padding: 0 5px;
+  font-weight: 600;
+}
+
 .btn {
   position: relative;
   display: inline-block;
@@ -1749,6 +1765,118 @@ footer {
   display: block;
 }
 
+/*===================================
+ * blob一覧ページ
+===================================*/
+.ly_rightPageTtl {
+  width: 30px;
+  font-family: "ＫＯさきがけ龍爪Ｍ", serif;
+  font-weight: normal;
+  font-size: 1.92rem;
+  position: absolute;
+  top: 108px;
+  right: 3.6%;
+}
+
+.ly_vcTextJp {
+  display: flex;
+  flex-direction: column;
+  font-family: "ＫＯさきがけ龍爪Ｍ", serif;
+  font-weight: normal;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.ly_rightPageTtl_en {
+  display: inline-block;
+  padding-top: 20px;
+  color: #999DA0;
+  font-family: "EB Garamond", serif;
+  font-weight: 400;
+  font-size: 1.32rem;
+  letter-spacing: 0.025em;
+  writing-mode: vertical-rl;
+  line-height: 30px;
+}
+
+.blog_container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.blog_container.inner {
+  width: calc(100% - 95px);
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blog_mainCont {
+  flex: 1;
+  width: 100%;
+  max-width: 44.75rem;
+  padding-left: 3.125rem;
+}
+
+.blog_detailCont {
+  padding-bottom: 3.75rem;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.blog_label {
+  display: flex;
+  align-items: center;
+}
+
+.blog_time {
+  color: #999DA0;
+  font-size: 0.9375rem;
+}
+
+.font_garamond {
+  font-weight: 400;
+}
+
+.blog_ttl {
+  margin: 0.5rem 0 3.3125rem;
+  font-size: 2.825rem;
+  line-height: 1.5;
+}
+
+.tsumiki_space {
+  margin-top: 3.75rem;
+}
+
+.blog_aside {
+  width: 23.4%;
+}
+
+.blog_aside_cont:not(:first-child) {
+  margin-top: 3.75rem;
+}
+
+.blog_aside_contTtl {
+  padding-bottom: 14px;
+  font-size: 1.54rem;
+}
+
+.blog_aside_contList li {
+  margin-top: 0.5rem;
+}
+.blog_aside_contList li a::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 1px;
+  margin-right: 8px;
+  background: #707070;
+  vertical-align: middle;
+  transform: translateY(-2px);
+}
+
+/*===================================
+ * news固定ページ
+===================================*/
 .entry {
   background: #fff;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
@@ -1756,8 +1884,7 @@ footer {
 }
 
 .entry-label {
-  display: inline-block;
-  margin-bottom: 1.125rem;
+  margin-right: 0.3125rem;
 }
 .entry-label a {
   background: #3e9be9;

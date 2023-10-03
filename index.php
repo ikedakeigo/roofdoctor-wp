@@ -13,46 +13,32 @@
             </div>
             <div class="newsArea">
               <ul class="news-items layout_flex slider">
-                <li class="news-item itemColum slider-nav">
-                  <a href="#">
+
+              <?php if(have_posts()) :  ?>
+                <?php while(have_posts()) : ?>
+                  <?php the_post() ;?>
+                  <li class="news-item itemColum slider-nav">
+                  <a href="<?php the_permalink(); ?>">
                     <div class="pict">
-                      <img src="https://placehold.jp/640x360.png" alt="お客様アンケート　西脇市" />
+                      <?php if(has_post_thumbnail()) : ?>
+                      <?php the_post_thumbnail(); ?>
+                      <?php else: ?>
+                      <img src="https://placehold.jp/640x360.png" alt="ダミー" />
+                      <?php endif; ?>
                     </div>
-                    <span class="tag"> お客様の声</span>
-                    <span class="data">2023.09.05</span>
-                    <p>お客様アンケート　西脇市</p>
+                    <?php
+                      $category = get_the_category();
+                      if($category[0]) :
+                    ?>
+                    <span class="tag"><?php echo $category[0]->cat_name; ?></span>
+                    <?php endif; ?>
+                    <span class="<?php the_time('c') ?> data"><?php the_time('Y.n.j') ?></span>
+                    <h4><?php the_title(); ?></h4>
                   </a>
                 </li>
-                <li class="news-item itemColum slider-nav">
-                  <a href="#">
-                    <div class="pict">
-                      <img src="https://placehold.jp/640x360.png" alt="お客様アンケート　西脇市" />
-                    </div>
-                    <span class="tag"> お客様の声</span>
-                    <span class="data">2023.09.05</span>
-                    <p>お客様アンケート　西脇市</p>
-                  </a>
-                </li>
-                <li class="news-item itemColum slider-nav">
-                  <a href="#">
-                    <div class="pict">
-                      <img src="https://placehold.jp/640x360.png" alt="お客様アンケート　西脇市" />
-                    </div>
-                    <span class="tag"> お客様の声</span>
-                    <span class="data">2023.09.05</span>
-                    <p>お客様アンケート　西脇市</p>
-                  </a>
-                </li>
-                <li class="news-item itemColum slider-nav">
-                  <a href="#">
-                    <div class="pict">
-                      <img src="https://placehold.jp/640x360.png" alt="お客様アンケート　西脇市" />
-                    </div>
-                    <span class="tag"> お客様の声</span>
-                    <span class="data">2023.09.05</span>
-                    <p>お客様アンケート　西脇市</p>
-                  </a>
-                </li>
+                <?php endwhile; ?>
+              <?php endif; ?>
+
               </ul>
             </div>
             <div class="about-message-contact">

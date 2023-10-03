@@ -295,3 +295,21 @@ body.active {
     }
   }
 }
+
+/*===================================
+ * ページネーション
+===================================*/
+
+.pagenation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 63px;
+  position: relative;
+  white-space: nowrap;
+
+  .current {
+    padding: 0 5px;
+    font-weight: 600;
+  }
+}

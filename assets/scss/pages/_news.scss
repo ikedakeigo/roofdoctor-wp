@@ -7,6 +7,144 @@
   }
 }
 
+/*===================================
+ * blob一覧ページ
+===================================*/
+
+.ly_rightPageTtl{
+  width: 30px;
+  font-family: "ＫＯさきがけ龍爪Ｍ", serif;
+  font-weight: normal;
+  font-size: 1.92rem;
+  position: absolute;
+  top: 108px;
+  right: 3.6%;
+}
+
+.ly_vcTextJp{
+  display: flex;
+  flex-direction: column;
+  font-family: "ＫＯさきがけ龍爪Ｍ", serif;
+  font-weight: normal;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.ly_rightPageTtl_en {
+  display: inline-block;
+  padding-top: 20px;
+  color: #999DA0;
+  font-family: 'EB Garamond', serif;
+  font-weight: 400;
+  font-size: 1.32rem;
+  letter-spacing: 0.025em;
+  writing-mode: vertical-rl;
+  line-height: 30px;
+}
+
+
+.blog_container{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+
+  &.inner{
+    width: calc(100% - 95px);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.blog_mainCont{
+  flex: 1;
+  width: 100%;
+  max-width: calc( rem(666) +  rem(50));
+  padding-left:  rem(50);
+}
+
+.blog_detailCont{
+  padding-bottom:  rem(60);
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.blog_label{
+  display: flex;
+  align-items: center;
+}
+.blog_time{
+  color: #999DA0;
+  font-size:  rem(15);
+}
+
+.font_garamond{
+  // font-family: 'EB Garamond', serif;
+  font-weight: 400;
+}
+
+.blog_ttl{
+  margin:  rem(8) 0  rem(53);
+  font-size: 2.825rem;
+  line-height: 1.5;
+}
+
+.blog_listText{
+
+}
+
+.tsumiki_space{
+  margin-top: rem(60);
+}
+
+.tsumiki_image{
+
+}
+
+.blog_aside{
+  width: 23.4%;
+}
+
+.hover_opacity{
+
+}
+
+.blog_aside_cont{
+  &:not(:first-child){
+    margin-top:  rem(60);
+  }
+}
+
+.blog_aside_contTtl{
+  padding-bottom: 14px;
+  font-size: 1.54rem;
+}
+
+
+.blog_aside_contList{
+  li {
+    margin-top:  rem(8);
+
+    a{
+      &::before{
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 1px;
+        margin-right: 8px;
+        background: #707070;
+        vertical-align: middle;
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+.blog_aside_moreBtn{
+
+}
+/*===================================
+ * news固定ページ
+===================================*/
 .entry {
   background: #fff;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
@@ -14,8 +152,8 @@
 }
 
 .entry-label {
-  display: inline-block;
-  margin-bottom:  rem(18);
+
+  margin-right: rem(5);
 
   a {
     background: $blue-color;
