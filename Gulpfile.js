@@ -9,18 +9,18 @@ gulp.task('scss', function () {
     .pipe(browserSync.stream());
 });
 
-gulp.task('serve', function () {
-  browserSync.init({
-    server: {
-      baseDir: './'
-    }
-  });
+// gulp.task('serve', function () {
+//   browserSync.init({
+//     server: {
+//       baseDir: './'
+//     }
+//   });
 
-  gulp.watch('./**/*.html').on('change', browserSync.reload);
-  gulp.watch('./**/*.css').on('change', browserSync.reload);
-  gulp.watch('./**/*.js').on('change', browserSync.reload);
+//   gulp.watch('./**/*.html').on('change', browserSync.reload);
+//   gulp.watch('./**/*.css').on('change', browserSync.reload);
+//   gulp.watch('./**/*.js').on('change', browserSync.reload);
 
-  gulp.watch('./assets/scss/**/*.scss', gulp.series('scss')); // パスを修正
-});
+//   gulp.watch('./assets/scss/**/*.scss', gulp.series('scss')); // パスを修正
+// });
 
 gulp.task('default', gulp.series('scss', 'serve'));

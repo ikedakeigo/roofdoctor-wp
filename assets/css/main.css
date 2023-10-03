@@ -1039,7 +1039,7 @@ footer {
   width: 100vw;
 }
 .homeBg.one {
-  background-image: url(/images/mv_01.png);
+  background-image: url("/wp-content/uploads/2023/images/mv_01.png");
   height: 100vh;
 }
 @media screen and (max-width: 767px) {
@@ -1049,7 +1049,7 @@ footer {
   }
 }
 .homeBg.two {
-  background-image: url(/images/mv_02.png);
+  background-image: url("/wp-content/uploads/2023/images/mv_02.png");
 }
 @media screen and (max-width: 767px) {
   .homeBg.two {
@@ -1058,7 +1058,7 @@ footer {
   }
 }
 .homeBg.three {
-  background-image: url(/images/mv_03.png);
+  background-image: url("/wp-content/uploads/2023/images/mv_03.png");
 }
 @media screen and (max-width: 767px) {
   .homeBg.three {
@@ -1067,7 +1067,7 @@ footer {
   }
 }
 .homeBg.four {
-  background-image: url(/images/mv_03.jpg);
+  background-image: url("/wp-content/uploads/2023/images/mv_03.jpg");
 }
 @media screen and (max-width: 767px) {
   .homeBg.four {
@@ -1076,7 +1076,7 @@ footer {
   }
 }
 .homeBg.five {
-  background-image: url(/images/mv_02.png);
+  background-image: url("/wp-content/uploads/2023/images/mv_02.png");
 }
 @media screen and (max-width: 767px) {
   .homeBg.five {
@@ -1085,7 +1085,7 @@ footer {
   }
 }
 .homeBg.six {
-  background-image: url(/images/mv_02.png);
+  background-image: url("/wp-content/uploads/2023/images/mv_02.png");
 }
 @media screen and (max-width: 767px) {
   .homeBg.six {
@@ -1094,7 +1094,7 @@ footer {
   }
 }
 .homeBg.seven {
-  background-image: url(/images/mv_02.png);
+  background-image: url("/wp-content/uploads/2023/images/mv_02.png");
 }
 @media screen and (max-width: 767px) {
   .homeBg.seven {
@@ -1118,7 +1118,7 @@ footer {
 .bg-sankaku {
   content: "";
   position: absolute;
-  background-image: url(/images/bg-sankaku.svg);
+  background-image: url("/wp-content/uploads/2023/images/bg-sankaku.svg");
   width: 100%;
   height: 100%;
   top: 0;
@@ -1323,7 +1323,7 @@ footer {
 .feature-item .num {
   position: relative;
   content: "";
-  background: url(/images/num_01.svg) no-repeat;
+  background: url("/wp-content/uploads/2023/images/num_01.svg") no-repeat;
   width: 50px;
   height: 44px;
   top: -16px;
@@ -1387,7 +1387,7 @@ footer {
   position: absolute;
   content: "";
   display: inline-block;
-  background: url(/images/icon_link.svg) no-repeat;
+  background: url("/wp-content/uploads/2023/images/icon_link.svg") no-repeat;
   background-size: contain;
   width: 0.875rem;
   height: 0.875rem;
@@ -1542,7 +1542,6 @@ footer {
 
 .company_content {
   margin-top: 5rem;
-  justify-content: space-around;
 }
 .company_content .pict img {
   max-width: 440px;
