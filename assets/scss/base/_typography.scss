@@ -1,0 +1,297 @@
+// _typography.scss: 全体の文字のスタイルや行間、フォントファミリーなどの基本的なタイポグラフィ設定。
+
+/*===================================
+ * colors
+===================================*/
+$main-color: #021f59;
+$sub-color: #072a40;
+$btn-color: #011640;
+$light-color: #5f7092;
+$white-color: #ebf0f2;
+$red-color: #e70012;
+$bk-color: #111111;
+$blue-color: #3e9be9;
+
+/*===================================
+ * 全体のサイズ
+===================================*/
+$max-width-desktop: 1200px; // デスクトップの最大幅
+$max-width-tablet: 768px; // タブレットの最大幅
+$max-width-mobile: 480px; // モバイルの最大幅
+body {
+}
+
+.container {
+  width: 100%;
+  max-width: $max-width-desktop;
+  margin: 0 auto;
+  padding: 0 20px;
+  @include mq(md) {
+    .container {
+      max-width: $max-width-tablet;
+    }
+  }
+  @include mq(sm) {
+    .container {
+      max-width: $max-width-mobile;
+    }
+  }
+}
+
+header,
+footer,
+#slider,
+#service,
+#features,
+#min-contact,
+#company,
+#contact {
+  margin: 0 calc(50% - 50vw);
+  width: 100vw;
+}
+
+/*===================================
+ * fontfamily
+===================================*/
+
+html {
+  font-family: "Zen Kaku Gothic New";
+}
+
+/*===================================
+ * 共通のスタイル
+===================================*/
+
+.wrapper {
+  position: relative;
+  display: block;
+  clear: both;
+  float: none;
+  // width: 1200px;
+  margin: 0 auto;
+  padding: 0 rem(15);
+  @include mq(sm) {
+    width: 100%;
+  }
+}
+
+.util-title {
+  margin-top: rem(144);
+  padding: 0 rem(128);
+  width: 100%;
+}
+
+.main-title {
+  font-size: rem(64);
+  letter-spacing: 5px;
+  font-weight: 700;
+  color: $bk-color;
+}
+
+.sub-title {
+  font-size: rem(20);
+  margin-left: rem(140);
+  font-weight: 700;
+}
+
+#service,
+#features,
+#products,
+#works,
+#company,
+#question,
+#contact {
+  .util-title {
+    text-align: center;
+  }
+  .sub-title {
+    margin-left: rem(0);
+  }
+}
+
+#features {
+  .main-title {
+    color: $white-color;
+  }
+}
+
+.textCenter {
+  text-align: center;
+}
+
+section h3 {
+  font-size: rem(26);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.1em;
+}
+
+section h2 {
+  position: relative;
+  font-size: rem(40);
+  font-weight: 500;
+  text-align: center;
+  line-height: 1;
+  padding-top: rem(100);
+  letter-spacing: 0.1em;
+}
+
+/*===================================
+ * img
+===================================*/
+
+figure img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/*===================================
+ * margin
+===================================*/
+.mb_20 {
+  content: "";
+  display: block;
+  margin-bottom: rem(20);
+}
+
+/*===================================
+ * color
+===================================*/
+.mh_tRed01 {
+  color: $red-color;
+}
+/*===================================
+ * font
+===================================*/
+
+h2 {
+  font-size: rem(26);
+  font-weight: bold;
+}
+
+h6 {
+  font-style: normal;
+  font-weight: bold;
+  line-height: 150%;
+  letter-spacing: 0.06em;
+  color: #9999;
+  margin-bottom: 5px;
+}
+
+/*===================================
+ * 文字
+===================================*/
+
+p {
+  font-size: rem(16);
+  // font-weight: ;
+  letter-spacing: 0em;
+  // line-height: calc( / );
+}
+
+/*===================================
+ * smGird
+===================================*/
+
+.smGrid {
+  font-size: rem(12);
+}
+
+/*===================================
+ * tel contact
+===================================*/
+
+.tel {
+  position: relative;
+  display: block;
+  width: 300px;
+  height: 41px;
+  background: url(../images/tel.svg) no-repeat top left;
+  background-size: contain;
+}
+
+/*===================================
+ * ul,li
+===================================*/
+
+ul {
+  letter-spacing: -0.4em;
+  line-height: 0;
+}
+
+li {
+  list-style: none;
+  letter-spacing: normal;
+  line-height: 1.5;
+  vertical-align: middle;
+}
+
+/*===================================
+ * pc sp
+===================================*/
+.for-pc {
+  display: block;
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.for-sp {
+  display: none;
+  @include mq(md) {
+    display: block;
+  }
+}
+
+/*===================================
+ * ページトップ
+===================================*/
+#pageTop {
+  height: 60px;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  opacity: 0.6;
+  z-index: 9999;
+}
+
+/*===================================
+ * メニューを開いている時スクロール無効
+===================================*/
+body.active {
+  overflow: hidden;
+}
+
+/*===================================
+ * パンくず
+===================================*/
+.breadcrumb {
+  color: #8d8d8d;
+  font-size: 12px;
+  margin-bottom: 14px;
+
+  & a {
+    text-decoration: none;
+  transition: all 0.3s ease 0s;
+  }
+
+  .home {
+    &::before{
+      content: "\f015";
+      font-family: "Font Awesome 5 Free", sans-serif;
+      font-weight: 900;
+      margin-right: 10px;
+    }
+  }
+
+  i {
+    margin-left: 15px;
+    margin-right: 15px;
+    &::before{
+      content: "\f105";
+    }
+  }
+}

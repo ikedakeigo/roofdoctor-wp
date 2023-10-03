@@ -1,0 +1,305 @@
+// _header.scss: ヘッダーやナビゲーションのスタイル。
+.header {
+  position: relative;
+  display: block;
+  // width: 100%;
+  height: rem(142);
+  z-index: 3;
+  padding-top: rem(8);
+  box-sizing: border-box;
+  @include mq(md) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100000;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    height: rem(150);
+  }
+  &__logo {
+    margin-left: rem(40);
+
+    & #lead {
+      font-size: rem(14);
+    }
+  }
+}
+
+.header__right {
+  position: relative;
+  margin-left: auto;
+  top: rem(-8);
+  &--contact {
+    justify-content: flex-end;
+
+    & .tel p {
+      font-size: rem(14);
+    }
+
+    a {
+      width: rem(240);
+      height: rem(62);
+      line-height: rem(62);
+      padding-left: 0;
+      text-align: center;
+      background: $bk-color;
+    }
+  }
+}
+
+.header__nav {
+  margin-top: rem(30);
+
+  &__list {
+    display: flex;
+  }
+}
+
+.header__item:not(:last-child) {
+  margin-right: rem(40);
+}
+
+.inner {
+  padding: 0 4rem;
+}
+
+.drawer-icon {
+  position: fixed;
+  top: 20px;
+  right: 3%;
+  z-index: 1004;
+  transition: transform 0.5s ease 0s;
+
+  &.is-active {
+    right: 5%;
+  }
+}
+
+/*===================================
+ * ハンバーガメニュー
+===================================*/
+#menuButton {
+  cursor: pointer;
+  width: 30px;
+  height: 22.5px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.5s ease-in-out;
+  z-index: 9999;
+}
+
+#menuButton div {
+  background-color: $bk-color;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s;
+}
+
+#menuButton div:nth-child(1) {
+  transform: translate(-50%, -10px);
+}
+
+#menuButton div:nth-child(2) {
+  height: 2px;
+  width: 100%;
+  background: $bk-color;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s;
+}
+
+#menuButton div:nth-child(3) {
+  transform: translate(-50%, 10px);
+}
+
+#menuButton.active div:nth-child(1) {
+  transform: rotate(45deg) translate(-50%, 0);
+  transform-origin: 0% 50%;
+  background: $white-color;
+}
+
+#menuButton.active div:nth-child(2) {
+  opacity: 0;
+}
+
+#menuButton.active div:nth-child(3) {
+  transform: rotate(-45deg) translate(-50%, 0);
+  transform-origin: 0% 50%;
+  background: $white-color;
+}
+
+.navSP_sns {
+  margin-top: 50px;
+}
+
+.navSP_list_sns {
+  text-align: center;
+}
+
+.navSP_item_sns:not(:first-child) {
+  margin-top: 18px;
+}
+
+.navSP_item_sns a img {
+  width: 10%;
+}
+
+.gNav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: #252526;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0s 0.3s, opacity 0.3s 0s;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.gNavBtn.white div{
+  background-color: $white-color !important;
+}
+
+.gNav.active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 0s, opacity 0.3s;
+}
+
+.gNav_container {
+  padding: 0 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.gNav-inner {
+  width: calc(100% - 95px);
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.gNav_primary {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 70%;
+  & span {
+    display: inline-block;
+    margin-top:  rem(20);
+    font-size:  rem(13.2);
+    font-family: 'EB Garamond', serif;
+    letter-spacing: 0.05em;
+    @include mq(sm){
+      font-size:  rem(13.2);
+      margin-top: 0;
+      margin-left: rem(10);
+    }
+  }
+}
+
+.gNav_primary li {
+  transform: translateY(10px);
+  opacity: 0;
+  transition: 0.3s 0s;
+  @include mq(sm){
+    margin-top: rem(20);
+  }
+}
+
+.gNav.active .gNav_primary li {
+  opacity: 1;
+}
+
+.gNav_primary li,
+.gNav_sns,
+.gNav_copyright,
+.gNav_privacy {
+  transition: transform 0.4s, opacity 0.4s;
+}
+
+.gNav_primary a {
+  display: inline-block;
+  color: #fff;
+  font-size: rem(24.5);
+  @include mq(sm){
+    font-size: rem(22);
+  }
+}
+.vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  @include mq(sm){
+    writing-mode: horizontal-tb;
+  }
+}
+
+.gNav_primary li:nth-child(1) {
+  transition-delay: 0s;
+}
+
+.gNav_primary li:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.gNav_primary li:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.gNav_primary li:nth-child(4) {
+  transition-delay: 0.3s;
+}
+
+.gNav_primary li:nth-child(5) {
+  transition-delay: 0.4s;
+}
+
+.gNav_primary li:nth-child(6) {
+  transition-delay: 0.5s;
+}
+
+.gNav_primary li:nth-child(7) {
+  transition-delay: 0.6s;
+}
+
+.gNav_primary li:nth-child(8) {
+  transition-delay: 0.7s;
+}
+
+.gNav_primary li:nth-child(9) {
+  transition-delay: 0.8s;
+}
+
+.gNav_primary li:nth-child(10) {
+  transition-delay: 0.9s;
+}
+
+
+.fixed-body {
+  position: fixed;
+  width: 100%;
+  overflow-y: scroll;
+  top: -webkit-calc(var(--scroll-y) * -1);
+  top: calc(var(--scroll-y) * -1);
+}
