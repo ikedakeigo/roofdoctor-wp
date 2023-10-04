@@ -48,6 +48,9 @@ footer {
     background: url(https://placehold.jp/411x88.png) no-repeat center center;
     background-size: contain;
     z-index: 10;
+    @include mq(sm){
+      width: 100%;
+    }
   }
 
   .address {

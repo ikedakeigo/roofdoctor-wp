@@ -45,6 +45,9 @@
   position: relative;
   padding-top: rem(120);
   margin-bottom: rem(150);
+  @include mq(sm){
+    padding-top: rem(80);
+  }
 }
 .news {
 }
@@ -91,6 +94,7 @@
     @include mq(sm) {
       height: 100vh;
       background-size: contain;
+      background-image: url('/wp-content/uploads/2023/images/mv_01_sp.png');
     }
   }
   &.two {
@@ -98,6 +102,7 @@
     @include mq(sm) {
       height: 100vh;
       background-size: contain;
+      background-image: url('/wp-content/uploads/2023/images/mv_02_sp.jpg');
     }
   }
   &.three {
@@ -105,6 +110,7 @@
     @include mq(sm) {
       height: 100vh;
       background-size: contain;
+      background-image: url('/wp-content/uploads/2023/images/mv_03_sp.png');
     }
   }
   &.four {
@@ -112,6 +118,7 @@
     @include mq(sm) {
       height: 100vh;
       background-size: contain;
+      background-image: url('/wp-content/uploads/2023/images/mv_04_sp.jpg');
     }
   }
   &.five {
@@ -119,6 +126,7 @@
     @include mq(sm) {
       height: 100vh;
       background-size: contain;
+      background-image: url('/wp-content/uploads/2023/images/mv_05_sp.jpg');
     }
   }
   &.six {
@@ -126,6 +134,7 @@
     @include mq(sm) {
       height: 100vh;
       background-size: contain;
+      background-image: url('/wp-content/uploads/2023/images/mv_06_sp.jpg');
     }
   }
   &.seven {
@@ -133,7 +142,23 @@
     @include mq(sm) {
       height: 100vh;
       background-size: contain;
+      background-image: url('/wp-content/uploads/2023/images/mv_07_sp.png');
     }
+  }
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 /*===================================
@@ -143,6 +168,10 @@
 #service {
   position: relative;
   padding: rem(200) 0 rem(150);
+
+  @include mq(sm){
+    padding: rem(80) 0 rem(150);
+  }
 
   // & .accordion {
   //   margin-top: rem(90);
@@ -201,6 +230,9 @@
 
 .service-read {
   text-align: center;
+  @include mq(sm){
+    text-align: left;
+  }
   h2 {
     position: relative;
     font-size: rem(40);
@@ -227,6 +259,8 @@
 
   @include mq(sm) {
     margin-top: rem(240);
+    height:  rem(172);
+    margin-bottom: rem(32);
   }
 
   & .pict {
@@ -246,7 +280,8 @@
     @include mq(sm) {
       border-top-right-radius: 0;
       border-top-left-radius: 0;
-      width: rem(480);
+      width: rem(320);
+      height:  rem(150);
     }
   }
 }
@@ -272,6 +307,8 @@
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     transform: translateX(-50%) translateY(-100%);
     display: block;
+    height:  rem(108);
+    width: rem(360);
   }
   & img {
     width: rem(60);
@@ -345,12 +382,18 @@
       width: rem(238);
       background: #efefea;
       border-top: 1px solid #fff;
+      @include mq(sm){
+        width: 100%;
+      }
     }
 
     & dd {
       width: rem(342);
       background: #ffffff;
       border-top: 1px solid #dfdfdf;
+      @include mq(sm){
+        width: 100%;
+      }
     }
   }
 
@@ -384,6 +427,9 @@
   // background-size: cover;
   background-color: $blue-color;
   color: #fff;
+  @include mq(sm){
+    padding: rem(40) 0 rem(120);
+  }
 }
 
 .features {
@@ -605,6 +651,9 @@
         background: $white-color;
         color: $bk-color;
         padding-left: 0;
+        @include mq(sm){
+          width: 100%;
+        }
       }
     }
   }
@@ -616,6 +665,9 @@
 
 #works {
   padding: rem(140) 0 rem(150);
+  @include mq(sm){
+    padding: rem(40) 0 rem(120);
+  }
 }
 
 .works {
@@ -670,6 +722,13 @@
   position: relative;
   padding-top: rem(160);
   padding-bottom: rem(140);
+  @include mq(sm){
+    padding: rem(40) 0 rem(120);
+  }
+
+  .inner {
+    padding: 0 4rem;
+  }
 }
 .company {
 }
@@ -712,6 +771,12 @@
           border-top: 1px solid $white-color;
           padding: rem(20) rem(10) rem(18) rem(14);
           box-sizing: border-box;
+          @include mq(sm){
+            width: 100%;
+            display: block;
+            border-top: 0;
+            padding: 3%;
+          }
         }
         & td {
           width: rem(590);
@@ -719,6 +784,12 @@
           border-top: 1px solid $bk-color;
           padding: rem(20) rem(10) rem(18) rem(15);
           box-sizing: border-box;
+          @include mq(sm){
+            width: 100%;
+            display: block;
+            border-top: 0;
+            padding: 3% 3% 5%;
+          }
         }
       }
     }
@@ -727,6 +798,14 @@
 
 .appear {
   padding-top: rem(30);
+  @include mq(sm){
+    align-items: flex-end;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    max-width: 100%;
+  }
+
 }
 
 .appear.layout_flex {
@@ -737,7 +816,9 @@
 
 .appear-info {
   width: 45%;
-
+  @include mq(sm){
+    width: 100%;
+  }
   & p {
     line-height: 2;
     letter-spacing: 0.1em;
@@ -754,6 +835,26 @@
   margin: 0px 0px 0px 0px;
   padding: 0px;
   display: flex;
+  @include mq(sm){
+    width:  calc( 85% - ( rem(30)  * 0.15000000000000002) );
+    max-width: calc(85% - ( rem(30)  * 0.15000000000000002));
+  }
+  .text{
+    color: $blue-color;
+    font-size:  rem(40);
+    font-weight: bold;
+    @include mq(sm){
+      font-size:  rem(26);
+    }
+  }
+  .text-sub{
+    color: $bk-color;
+    font-size:  rem(20);
+    font-weight: bold;
+    @include mq(sm){
+      font-size:  rem(14);
+    }
+  }
 }
 
 .appear-imgFirst {
@@ -770,6 +871,10 @@
 ===================================*/
 
 #flow {
+
+  .sub-title {
+    margin-left: rem(0);
+  }
 }
 .flow {
 }
@@ -783,6 +888,9 @@
 
 .flow_item {
   margin-bottom: rem(150);
+  @include mq(sm){
+    margin-bottom: rem(50);
+  }
 
   & .num {
     position: relative;
@@ -802,13 +910,15 @@
       top: rem(105);
       left: 0;
       right: 0;
+      @include mq(sm){
+        margin: 0;
+      }
     }
   }
   & .text_contents {
     width: rem(620);
     margin-left: rem(20);
     @include mq(sm) {
-      margin-left: rem(80);
       width: rem(300);
     }
     & h3 {
@@ -829,7 +939,7 @@
     max-width: rem(385);
     margin-left: rem(20);
     @include mq(sm) {
-      margin-left: rem(80);
+
     }
   }
 }
@@ -838,14 +948,25 @@
  * question
 ===================================*/
 
+#question {
+  @include mq(sm){
+    .inner {
+      padding: 0;
+    }
+  }
+}
+
 .question-title {
   color: #fff;
-  padding: 10px;
+  padding: 5% 12% 5% 16%;
   background-color: #0A1484;
   font-size: 1.3rem;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   cursor: pointer;
+  @include mq(sm){
+    font-size:  rem(12);
+  }
 }
 
 .question_list {

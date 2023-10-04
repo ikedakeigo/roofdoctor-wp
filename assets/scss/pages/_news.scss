@@ -48,11 +48,18 @@
   flex-direction: row-reverse;
   justify-content: space-between;
 
+  @include mq(sm){
+    display: block;
+  }
+
   &.inner{
     width: calc(100% - 95px);
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+    @include mq(sm){
+      padding: 0;
+    }
   }
 }
 
@@ -61,6 +68,10 @@
   width: 100%;
   max-width: calc( rem(666) +  rem(50));
   padding-left:  rem(50);
+  @include mq(sm){
+    margin-bottom: rem(100);
+    padding-left: 0;
+  }
 }
 
 .blog_detailCont{
@@ -102,6 +113,9 @@
 
 .blog_aside{
   width: 23.4%;
+  @include mq(sm){
+    width: 100%;
+  }
 }
 
 .hover_opacity{

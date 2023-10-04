@@ -74,4 +74,87 @@ function my_archive_title($title) {
 };
 add_filter('get_the_archive_title', 'my_archive_title');
 
+
+
+
+
+
+/**
+ * カスタム投稿タイプの追加
+ */
+
+// function my_custom_post_type() {
+//   $labels = array(
+//     'name' => 'ブログ',
+//     'singular_name' => 'ブログ',
+//     'add_new' => '新規追加',
+//     'add_new_item' => 'ブログ',
+//     'edit_item' => 'ブログ編集',
+//     'new_item' => 'New Blog',
+//     'view_item' => 'View Blog',
+//     'search_items' => 'Search Blog',
+//     'not_found' => 'No Blog found',
+//     'not_found_in_trash' => 'No Blog found in Trash',
+//     'parent_item_colon' => '',
+//     'menu_name' => 'ブログ'
+//   );
+
+//   $args = array(
+//     'labels' => $labels,
+//     'public' => true,
+//     'has_archive' => true,
+//     'menu_position' => 5,
+//     'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments'),
+//     'taxonomies' => array('category', 'post_tag'),
+//     'rewrite' => array('slug' => 'blog'),
+//     'menu_icon' => 'dashicons-admin-post'
+//   );
+
+//   register_post_type('blog', $args);
+// }
+// add_action('init', 'my_custom_post_type');
+
+
+function post_has_archive( $args, $post_type ) {
+  if ( 'post' == $post_type ) {
+   $args['rewrite'] = true;
+   $args['has_archive'] = 'blog'; //任意のスラッグ名　←アーカイブページを有効に
+   $args['label'] = 'ブログ'; //管理画面左ナビに「投稿」の代わりに表示される
+   }
+   return $args;
+  }
+  add_filter( 'register_post_type_args', 'post_has_archive', 10, 2 );
+
+add_filter( 'post_type_archive_link', function( $link, $post_type ) {
+  if ( 'blog' === $post_type ) {
+  $post_type_object = get_post_type_object( 'blog' );
+  $slug = $post_type_object->has_archive;
+  $link = get_home_url( null, '/' . $slug . '/' );
+  }
+  return $link;
+ }, 10, 2 );
+ function add_article_post_permalink( $permalink ) {
+ $permalink = '/blog' . $permalink; //「blog」は任意のものに変えて下さい。
+  return $permalink;
+ }
+ add_filter( 'pre_post_link', 'add_article_post_permalink' );
+ function add_article_post_rewrite_rules( $post_rewrite ) {
+  $return_rule = array();
+  foreach ( $post_rewrite as $regex => $rewrite ) {
+  $return_rule['blog/' . $regex] = $rewrite; //「blog」は任意のものに変えて下さい。
+  }
+ return $return_rule;
+ }
+ add_filter( 'post_rewrite_rules', 'add_article_post_rewrite_rules' );
+
+/**
+ * Yoast Duplicate Postプラグインを使用して、カスタム投稿タイプに複製機能を追加
+ */
+
+function ydp_cpt_support( $post_types ) {
+  $post_types[] = 'ブログ'; // カスタム投稿タイプの名前を指定
+  return $post_types;
+}
+add_filter( 'ydp_supported_post_types', 'ydp_cpt_support' );
+
 ?>

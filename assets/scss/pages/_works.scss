@@ -1,0 +1,155 @@
+.lyMv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #FFF;
+}
+
+.lyMv_ttl {
+  display: flex;
+  flex-direction: column;
+  font-weight: normal;
+  line-height: 1.1;
+  text-align: center;
+  letter-spacing: 2rem;
+  font-size:  rem(32);
+}
+
+.works{
+
+}
+
+.works_selectBox{
+
+  &.inner{
+    width: calc(100% - 95px);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+}
+
+.works_selectBox_all{
+
+}
+
+.works_sec{
+  // @include mq(sm){
+  //   &.inner{
+  //     padding: 0;
+  //   }
+  // }
+}
+
+.works_ttlBox{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.works_secTtl{
+  font-size:  rem(19);
+  letter-spacing: 0.05em;
+}
+
+.works_totalNum{
+  color: #999DA0;
+  margin-left: 15px;
+}
+
+.works_list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top:  rem(37);
+
+  li {
+    width: 48%;
+  }
+}
+
+.woks_day{
+
+}
+
+/*===================================
+ * 個別ページ
+===================================*/
+
+.worksDetail_container{
+
+  &.inner{
+    width: calc(100% - 95px);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    @include mq(sm){
+      padding: 0;
+    }
+  }
+}
+
+.worksDetail_ttlBox{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding:  rem(95) 0  rem(75);
+}
+
+.worksDetail_ttl{
+  font-size:  rem(32);
+  line-height: 1.31;
+  padding-right:  rem(15);
+}
+
+.works_block{
+  margin-top: rem(100);
+  @include mq(sm){
+    margin-top: rem(50);
+  }
+}
+
+
+.works_block01{
+  dl:first-child {
+    border-top: dotted 1px #ccc;
+    @include mq(sm){
+      border-top: none;
+    }
+  }
+
+  dl {
+    padding:  rem(20)  rem(10)  rem(20);
+    border-bottom: dotted 1px #ccc;
+    @include mq(sm){
+      border-bottom: none;
+    }
+  }
+
+
+  dl > dt {
+    width: 240px;
+    font-weight: bold;
+    float: left;
+    @include mq(sm){
+      font-weight: bold !important;
+      background-color: #eee !important;
+      padding: 4px 10px !important;
+      margin: 0 -10px 6px !important;
+      width: auto !important;
+      float: none !important;
+    }
+  }
+
+  dl > dd{
+    margin-left: rem(240);
+    @include mq(sm){
+      margin-left: 0px;
+    }
+  }
+}

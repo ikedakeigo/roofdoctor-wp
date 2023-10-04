@@ -50,12 +50,21 @@ footer,
   width: 100vw;
 }
 
+.inner {
+  padding: 0 4rem;
+  @include mq(sm){
+    // padding: 0;
+  }
+}
+
+
 /*===================================
  * fontfamily
 ===================================*/
 
-html {
+body {
   font-family: "Zen Kaku Gothic New";
+  // font-family: "ＫＯさきがけ龍爪Ｍ", serif;
 }
 
 /*===================================
@@ -79,6 +88,10 @@ html {
   margin-top: rem(144);
   padding: 0 rem(128);
   width: 100%;
+  @include mq(sm){
+    margin-top: rem(80);
+    padding: 0;
+  }
 }
 
 .main-title {
@@ -86,6 +99,9 @@ html {
   letter-spacing: 5px;
   font-weight: 700;
   color: $bk-color;
+  @include mq(sm){
+    font-size: rem(40);
+  }
 }
 
 .sub-title {
@@ -134,6 +150,9 @@ section h2 {
   line-height: 1;
   padding-top: rem(100);
   letter-spacing: 0.1em;
+  @include mq(sm){
+    text-align: left;
+  }
 }
 
 /*===================================
@@ -211,6 +230,9 @@ p {
   height: 41px;
   background: url(../images/tel.svg) no-repeat top left;
   background-size: contain;
+  @include mq(sm){
+    width: 100%;
+  }
 }
 
 /*===================================
@@ -234,14 +256,14 @@ li {
 ===================================*/
 .for-pc {
   display: block;
-  @include mq(md) {
+  @include mq(sm) {
     display: none;
   }
 }
 
 .for-sp {
   display: none;
-  @include mq(md) {
+  @include mq(sm) {
     display: block;
   }
 }

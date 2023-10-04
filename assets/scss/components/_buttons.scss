@@ -13,12 +13,18 @@
   padding-left: rem(20);
   background: $light-color;
   box-sizing: border-box;
+  @include mq(sm){
+    width: 100%;
+  }
 }
 
 .s_btn {
   display: block;
   width:  rem(275);
   margin:  rem(5) auto 0;
+  @include mq(sm){
+    width: 100%;
+  }
 }
 
 /*===================================

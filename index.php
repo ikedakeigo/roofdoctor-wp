@@ -1,8 +1,8 @@
 <?php get_header(); ?>
+<section class="homeMv lyMv lyMvWhite">
+  <video class="homeMv_video" src="<?php echo get_template_directory_uri()?>/assets/video/main.mp4" playsinline="" loop="" autoplay="" muted="" style="width: 1481.2px; height: 102%"></video>
+</section>
       <div class="container">
-        <section class="homeMv lyMv lyMvWhite">
-          <video class="homeMv_video" src="<?php echo get_template_directory_uri()?>/assets/video/main.mp4" playsinline="" loop="" autoplay="" muted="" style="width: 1481.2px; height: 102%"></video>
-        </section>
 
         <!-- news -->
         <section class="news" id="news">
@@ -43,7 +43,7 @@
             </div>
             <div class="about-message-contact">
               <div class="about-message-contact-text">
-                <a href="#"
+                <a href="/blog/"
                   ><img src="" alt="" />
                   <span>もっと見る</span>
                 </a>
@@ -56,7 +56,7 @@
         <div class="homeBg one scrollFadeBottom02 on"></div>
 
         <section class="service bg-sankaku" id="service">
-          <div class="wrapper">
+          <div class="inner">
             <div class="util-title">
               <p class="main-title">service</p>
               <p class="sub-title">サービス</p>
@@ -410,7 +410,7 @@
         </section> -->
         <!-- min-contact -->
         <section class="min-contact" id="min-contact">
-          <div class="wrapper inner">
+          <div class=" inner">
             <div class="contact_box">
               <div class="contact_box__title">
                 <h4 class="textCenter">
@@ -444,89 +444,43 @@
               <p class="sub-title">施工実績</p>
             </div>
             <div class="works_list">
-              <ul class="works_items layout_flex">
+            <ul class="works_items layout_flex">
+              <?php
+                $args = array(
+                  'post_type' => 'works',
+                  'posts_per_page' => -1
+                );
+                $query = new WP_Query($args);
+                if($query->have_posts()) :
+                  while($query->have_posts()) :
+                    $query->the_post();
+              ?>
                 <li class="works_item itemColum">
-                  <a href="#">
+                  <a href="<?php the_permalink(); ?>">
                     <div class="pict">
-                      <img src="https://placehold.jp/640x360.png" alt="訪問販売業者からの指摘" />
+                      <?php if(has_post_thumbnail()) : ?>
+                        <?php the_post_thumbnail(); ?>
+                      <?php else: ?>
+                        <img src="https://placehold.jp/640x360.png" alt="ダミー" />
+                      <?php endif; ?>
                     </div>
-                    <span class="tag"> お知らせ</span>
-                    <span class="area webfont">習志野市</span>
-                    <h3>訪問販売業者からの指摘</h3>
+                    <span class="tag"><?php echo $category[0]->cat_name; ?></span>
+                    <?php
+                      $tags = get_the_tags();
+                      if($tags) :
+                    ?>
+                      <span class="area webfont"><?php echo $tags[0]->name; ?></span>
+                    <?php endif; ?>
+                    <h3><?php the_title(); ?></h3>
                   </a>
                 </li>
-                <li class="works_item itemColum">
-                  <a href="#">
-                    <div class="pict">
-                      <img src="https://placehold.jp/640x360.png" alt="訪問販売業者からの指摘" />
-                    </div>
-                    <span class="tag"> お知らせ</span>
-                    <span class="area webfont">習志野市</span>
-                    <h3>訪問販売業者からの指摘</h3>
-                  </a>
-                </li>
-                <li class="works_item itemColum">
-                  <a href="#">
-                    <div class="pict">
-                      <img src="https://placehold.jp/640x360.png" alt="訪問販売業者からの指摘" />
-                    </div>
-                    <span class="tag"> お知らせ</span>
-                    <span class="area webfont">習志野市</span>
-                    <h3>訪問販売業者からの指摘</h3>
-                  </a>
-                </li>
-                <li class="works_item itemColum">
-                  <a href="#">
-                    <div class="pict">
-                      <img src="https://placehold.jp/640x360.png" alt="訪問販売業者からの指摘" />
-                    </div>
-                    <span class="tag"> お知らせ</span>
-                    <span class="area webfont">習志野市</span>
-                    <h3>訪問販売業者からの指摘</h3>
-                  </a>
-                </li>
-                <li class="works_item itemColum">
-                  <a href="#">
-                    <div class="pict">
-                      <img src="https://placehold.jp/640x360.png" alt="訪問販売業者からの指摘" />
-                    </div>
-                    <span class="tag"> お知らせ</span>
-                    <span class="area webfont">習志野市</span>
-                    <h3>訪問販売業者からの指摘</h3>
-                  </a>
-                </li>
-                <li class="works_item itemColum">
-                  <a href="#">
-                    <div class="pict">
-                      <img src="https://placehold.jp/640x360.png" alt="訪問販売業者からの指摘" />
-                    </div>
-                    <span class="tag"> お知らせ</span>
-                    <span class="area webfont">習志野市</span>
-                    <h3>訪問販売業者からの指摘</h3>
-                  </a>
-                </li>
-                <li class="works_item itemColum">
-                  <a href="#">
-                    <div class="pict">
-                      <img src="https://placehold.jp/640x360.png" alt="訪問販売業者からの指摘" />
-                    </div>
-                    <span class="tag"> お知らせ</span>
-                    <span class="area webfont">習志野市</span>
-                    <h3>訪問販売業者からの指摘</h3>
-                  </a>
-                </li>
-                <li class="works_item itemColum">
-                  <a href="#">
-                    <div class="pict">
-                      <img src="https://placehold.jp/640x360.png" alt="訪問販売業者からの指摘" />
-                    </div>
-                    <span class="tag"> お知らせ</span>
-                    <span class="area webfont">習志野市</span>
-                    <h3>訪問販売業者からの指摘</h3>
-                  </a>
-                </li>
-              </ul>
-              <a href="#" class="btn s_btn">施工実績一覧へ</a>
+              <?php
+                  endwhile;
+                endif;
+                wp_reset_postdata();
+              ?>
+            </ul>
+              <a href="/works/" class="btn s_btn">施工実績一覧へ</a>
             </div>
           </div>
         </section>
@@ -535,7 +489,7 @@
 
         <!-- company -->
         <section class="company bg-sankaku" id="company">
-          <div class="wrapper inner">
+          <div class=" inner">
             <div class="util-title">
               <p class="main-title">company</p>
               <p class="sub-title">会社案内</p>
@@ -557,8 +511,8 @@
                 <div class="sd appear appear-imgFirst">
                   <img class="sd" alt="" src="<?php echo get_template_directory_uri() ?>/images/ikeda01.png" />
                   <div class="sd appear">
-                    <p class="text sd appear">池田 章二</p>
-                    <p class="text sd appear">代表取締役</p>
+                    <p class="text-sub sd appear">代表取締役</p>
+                    <p class="text sd ">池田 章二</p>
                   </div>
                 </div>
                 <div class="sd appear appear-imgSecond"><img class="sd" alt="" src="https://storage.googleapis.com/studio-design-asset-files/projects/bXqzrBZwqD/s-680x1000_v-fs_webp_e1c90b23-3a2a-43e4-bae9-69493025ccf6_small.webp" /><img class="sd" alt="" src="https://storage.googleapis.com/studio-design-asset-files/projects/bXqzrBZwqD/s-600x560_v-fs_webp_01d90351-3118-472b-b6f0-b4d62f9e3798_small.webp" /></div>
@@ -676,7 +630,10 @@
           </div>
         </section>
 
-        <div class="homeBg seven scrollFadeBottom02 on"></div>
+        <!-- <div class="homeBg seven scrollFadeBottom02 on"></div> -->
+        <div class="video-wrapper">
+          <video src="<?php echo get_template_directory_uri()?>/assets/video/sub.MOV"></video>
+        </div>
 
         <!-- question -->
         <section class="question" id="question">
@@ -743,80 +700,7 @@
                   </div>
                 </div>
               </div>
-              <!-- <div class="question_left">
-                <div class="accordion">
-                  <h3>
-                    <span>Q.</span>
-                    訪問営業に「瓦がずれている」「漆喰がはがれている」と言われました。どうすればよいですか？
-                  </h3>
-                  <p>中には本当に親切心で教えてくれた業者さんもいるかもしれませんが、残念ながら訪問営業によるトラブルが多発しております。その場ですぐに屋根に上がろうとする・過剰に不安をあおってくる・高額な見積りと値引き・契約を急がせる・近隣の業者ではない等には注意が必要です。<br />名刺やチラシなどをもらい、業者のことをよく調べて、信頼できそうなところに点検を依頼しましょう。<br />弊社では、訪問営業は一切行っておりません。</p>
-                </div>
-                <div class="accordion">
-                  <h3>
-                    <span>Q.</span>
-                    訪問営業に「瓦がずれている」「漆喰がはがれている」と言われました。どうすればよいですか？
-                  </h3>
-                  <p>中には本当に親切心で教えてくれた業者さんもいるかもしれませんが、残念ながら訪問営業によるトラブルが多発しております。その場ですぐに屋根に上がろうとする・過剰に不安をあおってくる・高額な見積りと値引き・契約を急がせる・近隣の業者ではない等には注意が必要です。<br />名刺やチラシなどをもらい、業者のことをよく調べて、信頼できそうなところに点検を依頼しましょう。<br />弊社では、訪問営業は一切行っておりません。</p>
-                </div>
-                <div class="accordion">
-                  <h3>
-                    <span>Q.</span>
-                    訪問営業に「瓦がずれている」「漆喰がはがれている」と言われました。どうすればよいですか？
-                  </h3>
-                  <p>中には本当に親切心で教えてくれた業者さんもいるかもしれませんが、残念ながら訪問営業によるトラブルが多発しております。その場ですぐに屋根に上がろうとする・過剰に不安をあおってくる・高額な見積りと値引き・契約を急がせる・近隣の業者ではない等には注意が必要です。<br />名刺やチラシなどをもらい、業者のことをよく調べて、信頼できそうなところに点検を依頼しましょう。<br />弊社では、訪問営業は一切行っておりません。</p>
-                </div>
-                <div class="accordion">
-                  <h3>
-                    <span>Q.</span>
-                    訪問営業に「瓦がずれている」「漆喰がはがれている」と言われました。どうすればよいですか？
-                  </h3>
-                  <p>中には本当に親切心で教えてくれた業者さんもいるかもしれませんが、残念ながら訪問営業によるトラブルが多発しております。その場ですぐに屋根に上がろうとする・過剰に不安をあおってくる・高額な見積りと値引き・契約を急がせる・近隣の業者ではない等には注意が必要です。<br />名刺やチラシなどをもらい、業者のことをよく調べて、信頼できそうなところに点検を依頼しましょう。<br />弊社では、訪問営業は一切行っておりません。</p>
-                </div>
-                <div class="accordion">
-                  <h3>
-                    <span>Q.</span>
-                    訪問営業に「瓦がずれている」「漆喰がはがれている」と言われました。どうすればよいですか？
-                  </h3>
-                  <p>中には本当に親切心で教えてくれた業者さんもいるかもしれませんが、残念ながら訪問営業によるトラブルが多発しております。その場ですぐに屋根に上がろうとする・過剰に不安をあおってくる・高額な見積りと値引き・契約を急がせる・近隣の業者ではない等には注意が必要です。<br />名刺やチラシなどをもらい、業者のことをよく調べて、信頼できそうなところに点検を依頼しましょう。<br />弊社では、訪問営業は一切行っておりません。</p>
-                </div>
-              </div>
-              <div class="question_right">
-                <div class="accordion">
-                  <h3>
-                    <span>Q.</span>
-                    訪問営業に「瓦がずれている」「漆喰がはがれている」と言われました。どうすればよいですか？
-                  </h3>
-                  <p>中には本当に親切心で教えてくれた業者さんもいるかもしれませんが、残念ながら訪問営業によるトラブルが多発しております。その場ですぐに屋根に上がろうとする・過剰に不安をあおってくる・高額な見積りと値引き・契約を急がせる・近隣の業者ではない等には注意が必要です。<br />名刺やチラシなどをもらい、業者のことをよく調べて、信頼できそうなところに点検を依頼しましょう。<br />弊社では、訪問営業は一切行っておりません。</p>
-                </div>
-                <div class="accordion">
-                  <h3>
-                    <span>Q.</span>
-                    訪問営業に「瓦がずれている」「漆喰がはがれている」と言われました。どうすればよいですか？
-                  </h3>
-                  <p>中には本当に親切心で教えてくれた業者さんもいるかもしれませんが、残念ながら訪問営業によるトラブルが多発しております。その場ですぐに屋根に上がろうとする・過剰に不安をあおってくる・高額な見積りと値引き・契約を急がせる・近隣の業者ではない等には注意が必要です。<br />名刺やチラシなどをもらい、業者のことをよく調べて、信頼できそうなところに点検を依頼しましょう。<br />弊社では、訪問営業は一切行っておりません。</p>
-                </div>
-                <div class="accordion">
-                  <h3>
-                    <span>Q.</span>
-                    訪問営業に「瓦がずれている」「漆喰がはがれている」と言われました。どうすればよいですか？
-                  </h3>
-                  <p>中には本当に親切心で教えてくれた業者さんもいるかもしれませんが、残念ながら訪問営業によるトラブルが多発しております。その場ですぐに屋根に上がろうとする・過剰に不安をあおってくる・高額な見積りと値引き・契約を急がせる・近隣の業者ではない等には注意が必要です。<br />名刺やチラシなどをもらい、業者のことをよく調べて、信頼できそうなところに点検を依頼しましょう。<br />弊社では、訪問営業は一切行っておりません。</p>
-                </div>
-                <div class="accordion">
-                  <h3>
-                    <span>Q.</span>
-                    訪問営業に「瓦がずれている」「漆喰がはがれている」と言われました。どうすればよいですか？
-                  </h3>
-                  <p>中には本当に親切心で教えてくれた業者さんもいるかもしれませんが、残念ながら訪問営業によるトラブルが多発しております。その場ですぐに屋根に上がろうとする・過剰に不安をあおってくる・高額な見積りと値引き・契約を急がせる・近隣の業者ではない等には注意が必要です。<br />名刺やチラシなどをもらい、業者のことをよく調べて、信頼できそうなところに点検を依頼しましょう。<br />弊社では、訪問営業は一切行っておりません。</p>
-                </div>
-                <div class="accordion">
-                  <h3>
-                    <span>Q.</span>
-                    訪問営業に「瓦がずれている」「漆喰がはがれている」と言われました。どうすればよいですか？
-                  </h3>
-                  <p>中には本当に親切心で教えてくれた業者さんもいるかもしれませんが、残念ながら訪問営業によるトラブルが多発しております。その場ですぐに屋根に上がろうとする・過剰に不安をあおってくる・高額な見積りと値引き・契約を急がせる・近隣の業者ではない等には注意が必要です。<br />名刺やチラシなどをもらい、業者のことをよく調べて、信頼できそうなところに点検を依頼しましょう。<br />弊社では、訪問営業は一切行っておりません。</p>
-                </div>
-              </div> -->
+
             </div>
           </div>
         </section>

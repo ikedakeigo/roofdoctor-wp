@@ -3,20 +3,18 @@
 <p class="ly_rightPageTtl">
   <span class="ly_vcTextJp"><?php the_archive_title(); ?><span>
   <span class="ly_rightPageTtl_en">
-    <?php
-      $term = get_queried_object();
-      $slug = $term->slug;
-      echo $slug;
+  <?php
+      if(is_post_type_archive()) {
+        post_type_archive_title();
+      } else {
+        $term = get_queried_object();
+        $slug = $term->slug;
+        echo $slug;
+      }
     ?>
   </span>
 </p>
 
-<?php if(function_exists('bcn_display'))  :?>
-<!-- breadcrumb -->
-<div class="breadcrumb inner">
-  <?php bcn_display(); ?>
-</div>
-<?php endif; ?>
 
 <div class="blog_container inner" id="content">
 

@@ -1,6 +1,6 @@
 <aside class="blog_aside hover_opacity">
       <div class="blog_aside_cont">
-        <a href="#">すべての記事</a>
+        <a href="/blog/">すべての記事</a>
       </div>
       <div class="blog_aside_cont">
         <h2 class="blog_aside_contTtl font_garamond">Categories</h2>

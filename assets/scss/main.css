@@ -355,6 +355,22 @@ body.active {
   content: "\f105";
 }
 
+/*===================================
+ * ページネーション
+===================================*/
+.pagenation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 63px;
+  position: relative;
+  white-space: nowrap;
+}
+.pagenation .current {
+  padding: 0 5px;
+  font-weight: 600;
+}
+
 .btn {
   position: relative;
   display: inline-block;
@@ -1041,7 +1057,7 @@ footer {
   width: 100vw;
 }
 .homeBg.one {
-  background-image: url(/images/mv_01.png);
+  background-image: url("/wp-content/uploads/2023/images/mv_01.png");
   height: 100vh;
 }
 @media screen and (max-width: 767px) {
@@ -1051,7 +1067,7 @@ footer {
   }
 }
 .homeBg.two {
-  background-image: url(/images/mv_02.png);
+  background-image: url("/wp-content/uploads/2023/images/mv_02.png");
 }
 @media screen and (max-width: 767px) {
   .homeBg.two {
@@ -1060,7 +1076,7 @@ footer {
   }
 }
 .homeBg.three {
-  background-image: url(/images/mv_03.png);
+  background-image: url("/wp-content/uploads/2023/images/mv_03.png");
 }
 @media screen and (max-width: 767px) {
   .homeBg.three {
@@ -1069,7 +1085,7 @@ footer {
   }
 }
 .homeBg.four {
-  background-image: url(/images/mv_03.jpg);
+  background-image: url("/wp-content/uploads/2023/images/mv_03.jpg");
 }
 @media screen and (max-width: 767px) {
   .homeBg.four {
@@ -1078,7 +1094,7 @@ footer {
   }
 }
 .homeBg.five {
-  background-image: url(/images/mv_02.png);
+  background-image: url("/wp-content/uploads/2023/images/mv_02.png");
 }
 @media screen and (max-width: 767px) {
   .homeBg.five {
@@ -1087,7 +1103,7 @@ footer {
   }
 }
 .homeBg.six {
-  background-image: url(/images/mv_02.png);
+  background-image: url("/wp-content/uploads/2023/images/mv_02.png");
 }
 @media screen and (max-width: 767px) {
   .homeBg.six {
@@ -1096,7 +1112,7 @@ footer {
   }
 }
 .homeBg.seven {
-  background-image: url(/images/mv_02.png);
+  background-image: url("/wp-content/uploads/2023/images/mv_02.png");
 }
 @media screen and (max-width: 767px) {
   .homeBg.seven {
@@ -1120,7 +1136,7 @@ footer {
 .bg-sankaku {
   content: "";
   position: absolute;
-  background-image: url(/images/bg-sankaku.svg);
+  background-image: url("/wp-content/uploads/2023/images/bg-sankaku.svg");
   width: 100%;
   height: 100%;
   top: 0;
@@ -1326,7 +1342,7 @@ footer {
 .feature-item .num {
   position: relative;
   content: "";
-  background: url(/images/num_01.svg) no-repeat;
+  background: url("/wp-content/uploads/2023/images/num_01.svg") no-repeat;
   width: 50px;
   height: 44px;
   top: -16px;
@@ -1391,7 +1407,7 @@ footer {
   position: absolute;
   content: "";
   display: inline-block;
-  background: url(/images/icon_link.svg) no-repeat;
+  background: url("/wp-content/uploads/2023/images/icon_link.svg") no-repeat;
   background-size: contain;
   width: 0.875rem;
   height: 0.875rem;
@@ -1546,7 +1562,6 @@ footer {
 
 .company_content {
   margin-top: 5rem;
-  justify-content: space-around;
 }
 .company_content .pict img {
   max-width: 440px;
@@ -1746,18 +1761,137 @@ footer {
   background-color: #0056b3;
 }
 
+#content {
+  padding-top: 9.375rem;
+  margin-bottom: 9.375rem;
+}
+#content ul li {
+  display: block;
+}
+
+/*===================================
+ * blob一覧ページ
+===================================*/
+.ly_rightPageTtl {
+  width: 30px;
+  font-family: "ＫＯさきがけ龍爪Ｍ", serif;
+  font-weight: normal;
+  font-size: 1.92rem;
+  position: absolute;
+  top: 108px;
+  right: 3.6%;
+}
+
+.ly_vcTextJp {
+  display: flex;
+  flex-direction: column;
+  font-family: "ＫＯさきがけ龍爪Ｍ", serif;
+  font-weight: normal;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.ly_rightPageTtl_en {
+  display: inline-block;
+  padding-top: 20px;
+  color: #999DA0;
+  font-family: "EB Garamond", serif;
+  font-weight: 400;
+  font-size: 1.32rem;
+  letter-spacing: 0.025em;
+  writing-mode: vertical-rl;
+  line-height: 30px;
+}
+
+.blog_container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.blog_container.inner {
+  width: calc(100% - 95px);
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blog_mainCont {
+  flex: 1;
+  width: 100%;
+  max-width: 44.75rem;
+  padding-left: 3.125rem;
+}
+
+.blog_detailCont {
+  padding-bottom: 3.75rem;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.blog_label {
+  display: flex;
+  align-items: center;
+}
+
+.blog_time {
+  color: #999DA0;
+  font-size: 0.9375rem;
+}
+
+.font_garamond {
+  font-weight: 400;
+}
+
+.blog_ttl {
+  margin: 0.5rem 0 3.3125rem;
+  font-size: 2.825rem;
+  line-height: 1.5;
+}
+
+.tsumiki_space {
+  margin-top: 3.75rem;
+}
+
+.blog_aside {
+  width: 23.4%;
+}
+
+.blog_aside_cont:not(:first-child) {
+  margin-top: 3.75rem;
+}
+
+.blog_aside_contTtl {
+  padding-bottom: 14px;
+  font-size: 1.54rem;
+}
+
+.blog_aside_contList li {
+  margin-top: 0.5rem;
+}
+.blog_aside_contList li a::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 1px;
+  margin-right: 8px;
+  background: #707070;
+  vertical-align: middle;
+  transform: translateY(-2px);
+}
+
+/*===================================
+ * news固定ページ
+===================================*/
 .entry {
   background: #fff;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
-  padding: 40px 40px 12px;
+  padding: 2.5rem 2.5rem 0.75rem;
 }
 
 .entry-label {
-  display: inline-block;
-  margin-bottom: 18px;
+  margin-right: 0.3125rem;
 }
 .entry-label a {
-  background: #d81f32;
+  background: #3e9be9;
   color: #fff;
   display: block;
   font-size: 12px;
@@ -1819,7 +1953,7 @@ footer {
   transition: all 0.3s ease 0s;
 }
 .entry-body h3 {
-  border-bottom: 3px solid #d81f32;
+  border-bottom: 3px solid #3e9be9;
   font-size: 22px;
   font-weight: 600;
   line-height: 1.4;
@@ -1837,7 +1971,7 @@ footer {
   position: relative;
 }
 .entry-body h4::before {
-  color: #d81f32;
+  color: #3e9be9;
   content: "\f00c";
   font-size: 26px;
   font-weight: 900;
@@ -1861,12 +1995,12 @@ footer {
 
 #toc_container {
   background: #fff;
-  border: 2px solid #d81f32;
+  border: 2px solid #3e9be9;
   margin-top: 64px;
   padding: 20px 30px;
 }
 #toc_container .toc_title {
-  border-bottom: 2px solid #d81f32;
+  border-bottom: 2px solid #3e9be9;
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 30px;
@@ -1902,11 +2036,27 @@ footer {
   position: relative;
   text-decoration: none;
 }
+#toc_container ul .num::before {
+  background: #3e9be9;
+  border-radius: 50%;
+  color: #fff;
+  content: counter(toc);
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  height: 26px;
+  left: 0;
+  line-height: 26px;
+  margin-top: -2px;
+  min-width: 26px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+}
 
 .entry-body h2 {
   background: #ebebeb;
   border-radius: 3px;
-  border-top: 6px solid #d81f32;
+  border-top: 6px solid #3e9be9;
   font-size: 26px;
   font-weight: 600;
   line-height: 1.2;
@@ -1925,25 +2075,6 @@ footer {
   position: absolute;
   top: 100%;
   width: 0;
-}
-
-.btn {
-  -webkit-appearance: none;
-  background-color: #01b3a7;
-  background-image: none;
-  border: none;
-  border-radius: 3px;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: 600;
-  margin: 0;
-  min-width: 282px;
-  padding: 17px 20px 14px;
-  text-align: center;
-  text-decoration: none;
-  transition: all 0.3s ease 0s;
 }
 
 .entry-tag-items {
@@ -2100,5 +2231,47 @@ footer {
   text-align: center;
   top: 0;
   width: 20px;
+}
+
+.lyMv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #FFF;
+}
+
+.lyMv_ttl {
+  display: flex;
+  flex-direction: column;
+  font-weight: normal;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.works_selectBox.inner {
+  width: calc(100% - 95px);
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*===================================
+ * 個別ページ
+===================================*/
+.worksDetail_ttlBox {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 5.9375rem 0 4.6875rem;
+}
+
+.worksDetail_ttl {
+  font-size: 2rem;
+  line-height: 1.31;
+  padding-right: 0.9375rem;
 }
 /*# sourceMappingURL=main.css.map */
