@@ -217,7 +217,7 @@ section h2 {
  * mv キャッチコピー
 ===================================*/
 #typed-output {
-  font-size: 50px;
+  font-size: 3.125rem;
   font-weight: bold;
   color: #ffffff;
   position: absolute;
@@ -225,6 +225,7 @@ section h2 {
   left: 50%;
   transform: translate(-50%, -50%);
   white-space: nowrap;
+  writing-mode: vertical-rl;
   z-index: 999;
 }
 

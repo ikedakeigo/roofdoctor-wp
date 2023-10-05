@@ -195,27 +195,44 @@ if (jQuery(".homeMv_video").length) {
 // タイピングアニメーション
 document.addEventListener("DOMContentLoaded", function() {
   const outputElement = document.getElementById('typed-output');
-  const text = "信頼と実績のRoorDoctor";
+  const text = "信頼と実績";
+  const text2 = "RoorDoctor";
+  const text3 = "創業35年の信頼と実績";
   let index = 0;
+  let currentText = text; // 現在のテキストを追跡するための変数
 
   function type() {
-      if (index < text.length) {
-          outputElement.textContent += text.charAt(index);
+      if (index < currentText.length) {
+          outputElement.textContent += currentText.charAt(index);
           index++;
-          setTimeout(type, 100); // 100msごとに次の文字を表示
+          setTimeout(type, 100);
       } else {
-          setTimeout(erase, 2000); // タイピングが完了したら2秒待ってから消去を開始
+          setTimeout(erase, 2000);
       }
   }
 
   function erase() {
       if (index > 0) {
-          outputElement.textContent = text.substring(0, index - 1);
+          outputElement.textContent = currentText.substring(0, index - 1);
           index--;
-          setTimeout(erase, 100); // 100msごとに一文字を消去
+          setTimeout(erase, 100);
       } else {
-          setTimeout(type, 1000); // 全ての文字が消去されたら1秒待ってから再びタイピングを開始
+          switchText(); // 現在のテキストを切り替える
+          setTimeout(type, 1000);
       }
+  }
+
+  function switchText() {
+      if (currentText === text) {
+          currentText = text2;
+      }
+      else if (currentText === text2){
+        currentText = text3;
+      }
+      else {
+          currentText = text;
+      }
+      index = 0; // indexをリセットする
   }
 
   type();
