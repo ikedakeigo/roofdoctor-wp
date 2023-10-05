@@ -88,6 +88,7 @@
   background-attachment: fixed;
   margin: 0 calc(50% - 50vw);
   width: 100vw;
+  position: relative;
   &.one {
     background-image: url('/wp-content/uploads/2023/images/mv_01.png');
     height: 100vh;
@@ -147,6 +148,26 @@
   }
 }
 
+/*===================================
+ * 画像の中央に表示
+===================================*/
+.utilBG-title{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.mainBG-title{
+  font-size:  rem(20);
+  margin-bottom: rem(5);
+}
+
+.subBG-title{
+  font-size:  rem(14);
+}
+
 .video-wrapper {
   position: relative;
   padding-bottom: 56.25%;
@@ -171,41 +192,44 @@
 
   @include mq(sm){
     padding: rem(80) 0 rem(150);
+    .inner {
+      padding: 0  rem(10);
+    }
   }
 
-  // & .accordion {
-  //   margin-top: rem(90);
+  & .accordion {
+    margin-top: rem(90);
 
-  //   & h3 {
-  //     position: relative;
-  //     padding: rem(10) 0;
-  //     box-sizing: border-box;
-  //     display: flex;
-  //     align-items: center;
-  //     border-bottom: 1px solid #111111;
-  //     cursor: pointer;
+    & h3 {
+      position: relative;
+      padding: rem(10) 0;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #111111;
+      cursor: pointer;
 
-  //     &::before,
-  //     &::after {
-  //       position: absolute;
-  //       content: "";
-  //       right: 0;
-  //       bottom: rem(22);
-  //       width: rem(26);
-  //       height: rem(2);
-  //       background-color: $bk-color;
-  //       transition: 0.35s;
-  //     }
+      &::before,
+      &::after {
+        position: absolute;
+        content: "";
+        right: 0;
+        bottom: rem(22);
+        width: rem(26);
+        height: rem(2);
+        background-color: $bk-color;
+        transition: 0.35s;
+      }
 
-  //     &::after {
-  //       top: 48%;
-  //       transform: rotate(90deg);
-  //     }
-  //   }
+      &::after {
+        top: 48%;
+        transform: rotate(90deg);
+      }
+    }
 
-  //   & .service-price {
-  //   }
-  // }
+    & .service-price {
+    }
+  }
 
   & .btn {
     display: block;
@@ -347,7 +371,7 @@
     padding: rem(40) rem(20) rem(35);
 
     & p {
-      padding: 0 rem(50);
+      // padding: 0 rem(50);
     }
   }
   & img {
@@ -360,6 +384,30 @@
 
   & p {
   }
+}
+
+.service-content {
+  display: flex;
+  // gap: 30px;  /* 両者の間隔 */
+}
+
+.service-slider, .service-pricing {
+  // flex: 1;
+}
+
+.service-text{
+  padding-bottom:  rem(20);
+}
+
+.service-pricing {
+  border-top: 1px solid #ccc;
+  padding-top:  rem(20);
+}
+
+.price {
+  font-size: 24px;
+  color: #858585;  /* 価格の色を赤に */
+  font-weight: bold;
 }
 
 .service-price {
@@ -415,6 +463,10 @@
   & span.caption{
     font-size:  rem(12);
     color: #757575;
+  }
+
+  &.inner {
+    padding: 0  rem(0.5);
   }
 }
 /*===================================
@@ -560,6 +612,9 @@
   // background-size: cover;
   @include mq(sm) {
     height: auto;
+    .inner{
+      padding: 0  rem(10);
+    }
   }
 }
 
@@ -958,7 +1013,8 @@
 
 .question-title {
   color: #fff;
-  padding: 5% 12% 5% 16%;
+  // padding: 5% 12% 5% 16%;
+  padding:  rem(20)  rem(25);
   background-color: #0A1484;
   font-size: 1.3rem;
   border-top-left-radius: 10px;
@@ -966,6 +1022,7 @@
   cursor: pointer;
   @include mq(sm){
     font-size:  rem(12);
+    padding: 5% 12% 5% 16%;
   }
 }
 

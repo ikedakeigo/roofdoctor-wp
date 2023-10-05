@@ -65,6 +65,7 @@
 .layout_flex {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   @include mq(sm){
     display: block;
   }

@@ -13,6 +13,21 @@ jQuery(".js-accordion_title").on("click", function () {
 });
 
 
+jQuery(document).ready(function(){
+  jQuery('.slider_service').slick({
+      dots: true,
+      fade: true,
+      speed: 100,
+      autoplay: true,
+      infinite: true,
+      cssEase: 'linear'
+  });
+});
+
+
+
+
+
 
 // drawer
 jQuery(".drawer-icon, .drawer-background, .drawer-content-item, .drawer-item-link, .drawer-nav-item-link-sub").on("click", function () {
@@ -172,3 +187,36 @@ if (jQuery(".homeMv_video").length) {
       }
     }
   }
+
+
+
+
+
+// タイピングアニメーション
+document.addEventListener("DOMContentLoaded", function() {
+  const outputElement = document.getElementById('typed-output');
+  const text = "信頼と実績のRoorDoctor";
+  let index = 0;
+
+  function type() {
+      if (index < text.length) {
+          outputElement.textContent += text.charAt(index);
+          index++;
+          setTimeout(type, 100); // 100msごとに次の文字を表示
+      } else {
+          setTimeout(erase, 2000); // タイピングが完了したら2秒待ってから消去を開始
+      }
+  }
+
+  function erase() {
+      if (index > 0) {
+          outputElement.textContent = text.substring(0, index - 1);
+          index--;
+          setTimeout(erase, 100); // 100msごとに一文字を消去
+      } else {
+          setTimeout(type, 1000); // 全ての文字が消去されたら1秒待ってから再びタイピングを開始
+      }
+  }
+
+  type();
+});

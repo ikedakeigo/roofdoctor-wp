@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 <section class="homeMv lyMv lyMvWhite">
   <video class="homeMv_video" src="<?php echo get_template_directory_uri()?>/assets/video/main.mp4" playsinline="" loop="" autoplay="" muted="" style="width: 1481.2px; height: 102%"></video>
+  <div id="typed-output"></div>
 </section>
       <div class="container">
-
         <!-- news -->
-        <section class="news" id="news">
+        <section class="news bk_animation" id="news">
           <div class="wrapper">
             <div class="util-title">
               <p class="main-title">NEWS</p>
@@ -53,7 +53,12 @@
         </section>
         <!-- service -->
 
-        <div class="homeBg one scrollFadeBottom02 on"></div>
+        <div class="homeBg one scrollFadeBottom02 on">
+          <!-- <div class="utilBG-title">
+              <p class="mainBG-title">flow</p>
+              <p class="subBG-title">施工までの流れ</p>
+          </div> -->
+        </div>
 
         <section class="service bg-sankaku" id="service">
           <div class="inner">
@@ -61,8 +66,10 @@
               <p class="main-title">service</p>
               <p class="sub-title">サービス</p>
             </div>
-            <div class="service-read read">
-              <h2>私たちはこんなことが出来ます！</h2>
+            <div class="service-read read wrapper">
+              <h2>
+                私たちは<br class="for-sp">こんなことが出来ます！
+              </h2>
               <p>
                 屋根のひび割れや部分的な損傷、台風等の暴風対策に対応します。<br />
                 気になる箇所のメンテナンスはもちろん、ドローン空撮での短時間チェックも実施。 <br />
@@ -70,6 +77,7 @@
                 不要な物置や蔵の解体も承ります。多様なスタッフがお悩み解決いたします。
               </p>
             </div>
+
             <!-- ​屋根修理 -->
             <div class="leakage_repair" id="leakage_repair">
               <div class="service-title">
@@ -84,7 +92,7 @@
                 </div>
                 <div class="pict"></div>
               </div>
-              <div class="service-info inner">
+              <div class="service-info ">
                 <p class="textCenter">
                   あなたの屋根のお悩みは？<br />
                   屋根・瓦のこんな状態には注意が必要です！<br />
@@ -93,29 +101,45 @@
                 <ul class="service-items layout_flex">
                   <li class="service-item">
                     <figure>
-                      <img src="https://placehold.jp/640x360.png" alt="" />
+                      <img  src="<?php echo get_template_directory_uri() ?>/images/repair_01.png" alt="" />
                     </figure>
-                    <figcaption>棟の瓦がズレている / 漆喰が剥がれている</figcaption>
-                    <p>かなり痛んでいるのがよくわかります。棟がこのような状態になると、雨漏りや瓦が崩れてしまうなどの危険があります。屋根や家の構造材に影響を与えないように、早めに修理を行う必要があります。</p>
+                    <figcaption>棟の瓦がズレている / <br class="for-pc">喰が剥がれている</figcaption>
+                    <p class="service-text">かなり痛んでいるのがよくわかります。棟がこのような状態になると、雨漏りや瓦が崩れてしまうなどの危険があります。屋根や家の構造材に影響を与えないように、早めに修理を行う必要があります。</p>
+                    <div class="service-pricing">
+                        <p>積み直し工事 : <span class="price">8500円/ｍ～</span></p>
+                        <p>漆喰塗り替え工事 :  <span class="price">1500円/ｍ～</span></p>
+                    </div>
+                  </li>
+                  <li class="service-item">
+                      <figure class="slider_service">
+                          <img src="<?php echo get_template_directory_uri() ?>/images/repair_02_1.webp" alt="" />
+                          <img src="<?php echo get_template_directory_uri() ?>/images/repair_02_2.webp" alt="" />
+                          <img src="<?php echo get_template_directory_uri() ?>/images/repair_02_3.webp" alt="" />
+                          <img src="<?php echo get_template_directory_uri() ?>/images/repair_02_4.webp" alt="" />
+                          <!-- さらに追加する場合はここに -->
+                      </figure>
+                      <figcaption>瓦が割れている / <br class="for-pc"> 瓦がズレている</figcaption>
+                      <p class="service-text">
+                        瓦にヒビや割れ、ずれが見られます。放置しておきますと、屋根の下地に雨水等が浸入し、家自体の傷みに繋がっていきます。そうなる前に瓦の取替え等の処理を行う必要があります。</p>
+                      <div class="service-pricing">
+                        <p>瓦差し替え工事 :  <span class="price">3000円～​</span></p>
+                      </div>
                   </li>
                   <li class="service-item">
                     <figure>
-                      <img src="https://placehold.jp/640x360.png" alt="" />
+                      <img src="<?php echo get_template_directory_uri() ?>/images/repair_03.webp" alt="" />
                     </figure>
-                    <figcaption>瓦が割れている / 瓦がズレている</figcaption>
-                    <p>瓦にヒビや割れ、ずれが見られます。放置しておきますと、屋根の下地に雨水等が浸入し、家自体の傷みに繋がっていきます。そうなる前に瓦の取替え等の処理を行う必要があります。</p>
-                  </li>
-                  <li class="service-item">
-                    <figure>
-                      <img src="https://placehold.jp/640x360.png" alt="" />
-                    </figure>
-                    <figcaption>気になっている天井や壁のシミ</figcaption>
-                    <p>天井にシミがある場合、棟板金の劣化や瓦などの屋根材のズレの他、天窓から雨水が浸透していたりと様々な原因が考えられます。</p>
+                    <figcaption>谷板に穴があいている / <br class="for-pc">谷の下辺りが雨漏りする</figcaption>
+                    <p class="service-text">谷板が銅板で施工されている場合、古くなると、雨だれが当たる場所に穴が開いてしまうことがあります。雨水が直接屋根の下地に浸入し、雨漏りに繋がるので、錆びに強いステンレス製の谷板に交換する必要があります。</p>
+                    <div class="service-pricing">
+                        <p>谷板交換工事 :  <span class="price">4500円/ｍ～</span></p>
+                      （ステンレス谷板代金を含む）
+                    </div>
                   </li>
                 </ul>
 
                 <!-- accordion -->
-                <div class="hs-accordion-group">
+                <!-- <div class="hs-accordion-group">
                   <div class="hs-accordion" id="hs-basic-no-arrow-heading-one">
                     <button class="hs-accordion-toggle hs-accordion-active:text-blue-600 group py-3 inline-flex items-center gap-x-3 w-full font-semibold text-left text-gray-800 transition dark\:bg-blue-600 text-4xl justify-center" aria-controls="hs-basic-no-arrow-collapse-one">料金の目安</button>
                     <div id="hs-basic-no-arrow-collapse-one text-center " class="service-price hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden" aria-labelledby="hs-basic-no-arrow-heading-one">
@@ -147,7 +171,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
                 <a href="#" class="btn">雨漏り修理施工実績一覧へ</a>
               </div>
             </div>
@@ -159,43 +183,44 @@
                   <div class="blue_box">
                     <img src="https://placehold.jp/64x52.png" alt="" />
                     <h3>
-                      雨漏り修理
+                    屋根葺き替え
                       <span class="en">Leakage Repair</span>
                     </h3>
                   </div>
                 </div>
                 <div class="pict"></div>
               </div>
-              <div class="service-info inner">
-                <p>
-                  「天井や壁にシミが…」雨漏りに気づかれたら、まずは丸治瓦店にご相談ください。<br />
-                  屋根工事のプロがしっかりと現地調査を行い、雨漏りの原因となる箇所を確認、適正な施工方法で修理についてご提案させていただきます。
+              <div class="service-info ">
+                <p class="textCenter">
+                屋根勾配、小屋組みの強度等の条件が揃えば <br>
+                カラーベストの屋根やトタン屋根等から<br>
+                瓦屋根への葺き替えも可能です！<br>
+                <br>
+                当社では、屋根診断の結果、屋根下地材からの交換<br>
+                裏板・野地板の交換や垂木の交換など、
+                <br>
+                屋根の状況及びお客様のご要望に応じた葺き替え工事を行います。
                 </p>
                 <ul class="service-items layout_flex">
                   <li class="service-item">
-                    <figure>
-                      <img src="https://placehold.jp/640x360.png" alt="" />
+                    <figure class="slider_service">
+                          <img src="<?php echo get_template_directory_uri() ?>/images/repair_02_1.webp" alt="" />
+                          <img src="<?php echo get_template_directory_uri() ?>/images/repair_02_2.webp" alt="" />
+                          <img src="<?php echo get_template_directory_uri() ?>/images/repair_02_3.webp" alt="" />
+                          <img src="<?php echo get_template_directory_uri() ?>/images/repair_02_4.webp" alt="" />
                     </figure>
-                    <figcaption>気になっている天井や壁のシミ</figcaption>
-                    <p>天井にシミがある場合、棟板金の劣化や瓦などの屋根材のズレの他、天窓から雨水が浸透していたりと様々な原因が考えられます。</p>
+                    <figcaption>よみがえり</figcaption>
+                    <p class="service-text">古くなった屋根は、新しい瓦屋根に葺き替えする事が可能です！</p>
+                    <div class="service-pricing">
+                      <p>
+                      屋根葺き替え工事​ :  <span class="price">1,100,000円 / 30坪~​</span>
+                      </p>
+                    </div>
                   </li>
-                  <li class="service-item">
-                    <figure>
-                      <img src="https://placehold.jp/640x360.png" alt="" />
-                    </figure>
-                    <figcaption>気になっている天井や壁のシミ</figcaption>
-                    <p>天井にシミがある場合、棟板金の劣化や瓦などの屋根材のズレの他、天窓から雨水が浸透していたりと様々な原因が考えられます。</p>
-                  </li>
-                  <li class="service-item">
-                    <figure>
-                      <img src="https://placehold.jp/640x360.png" alt="" />
-                    </figure>
-                    <figcaption>気になっている天井や壁のシミ</figcaption>
-                    <p>天井にシミがある場合、棟板金の劣化や瓦などの屋根材のズレの他、天窓から雨水が浸透していたりと様々な原因が考えられます。</p>
-                  </li>
+                  <!-- 必要があれば追加  -->
                 </ul>
 
-                <div class="hs-accordion-group">
+                <!-- <div class="hs-accordion-group">
                   <div class="hs-accordion" id="hs-basic-no-arrow-heading-2">
                     <button class="hs-accordion-toggle hs-accordion-active:text-blue-600 group py-3 inline-flex items-center gap-x-3 w-full font-semibold text-left text-gray-800 transition dark\:bg-blue-600 text-4xl justify-center" aria-controls="hs-basic-no-arrow-collapse-one">料金の目安</button>
                     <div id="hs-basic-no-arrow-collapse-2" class="service-price hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden" aria-labelledby="hs-basic-no-arrow-heading-one">
@@ -227,29 +252,29 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
 
                 <a href="#" class="btn">雨漏り修理施工実績一覧へ</a>
               </div>
             </div>
-            <!-- 屋根リフォーム -->
+            <!-- ​屋根塗装 / 外壁塗装 -->
             <div class="Renova" id="Renova">
               <div class="service-title">
                 <div class="wrapper">
                   <div class="blue_box">
                     <img src="https://placehold.jp/64x52.png" alt="" />
                     <h3>
-                      雨漏り修理
+                    ​屋根塗装 / 外壁塗装 / 解体工事
                       <span class="en">Leakage Repair</span>
                     </h3>
                   </div>
                 </div>
                 <div class="pict"></div>
               </div>
-              <div class="service-info inner">
+              <div class="service-info ">
                 <p>
-                  「天井や壁にシミが…」雨漏りに気づかれたら、まずは丸治瓦店にご相談ください。<br />
-                  屋根工事のプロがしっかりと現地調査を行い、雨漏りの原因となる箇所を確認、適正な施工方法で修理についてご提案させていただきます。
+                    必要に応じて塗装工事や解体工事も引き受けております。<br>
+                    お客様のご要望をお聞かせください。
                 </p>
                 <ul class="service-items layout_flex">
                   <li class="service-item">
@@ -275,44 +300,68 @@
                   </li>
                 </ul>
 
-                <div class="hs-accordion-group">
-                  <div class="hs-accordion" id="hs-basic-no-arrow-heading-3">
-                    <button class="hs-accordion-toggle hs-accordion-active:text-blue-600 group py-3 inline-flex items-center gap-x-3 w-full font-semibold text-left text-gray-800 transition dark\:bg-blue-600 text-4xl justify-center" aria-controls="hs-basic-no-arrow-collapse-one">料金の目安</button>
-                    <div id="hs-basic-no-arrow-collapse-3" class="service-price hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden" aria-labelledby="hs-basic-no-arrow-heading-one">
-                      <div class="layout_flex">
-                        <div class="left">
-                          <dl>
-                            <dt>漆喰補修工事</dt>
-                            <dd>10,000～15,000円 / ヵ所</dd>
-                          </dl>
-                          <dl>
-                            <dt>棟積み直し工事</dt>
-                            <dd>15,000～20,000円 / ｍ</dd>
-                          </dl>
-                          <dl>
-                            <dt>谷板金交換工事</dt>
-                            <dd>15,000～ 20,000円 / m</dd>
-                          </dl>
-                        </div>
-                        <div class="right">
-                          <dl>
-                            <dt>雨樋掃除</dt>
-                            <dd>15,000円〜</dd>
-                          </dl>
-                          <dl>
-                            <dt class="h_91">破損瓦差し替え</dt>
-                            <dd>1枚から承ります。<br />詳しくはお問い合わせください。</dd>
-                          </dl>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <a href="#" class="btn">雨漏り修理施工実績一覧へ</a>
+                <a href="#" class="btn hoverUnderline">雨漏り修理施工実績一覧へ</a>
               </div>
             </div>
           </div>
+          <div class="hs-accordion-group">
+            <div class="hs-accordion" id="hs-basic-no-arrow-heading-3">
+              <button class="hs-accordion-toggle hs-accordion-active:text-blue-600 group py-3 inline-flex items-center gap-x-3 w-full font-semibold text-left text-gray-800 transition dark\:bg-blue-600 text-4xl justify-center" aria-controls="hs-basic-no-arrow-collapse-one">料金の目安</button>
+              <div id="hs-basic-no-arrow-collapse-3" class="service-price hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden" aria-labelledby="hs-basic-no-arrow-heading-one">
+                <div class="layout_flex">
+                  <div class="left">
+                    <dl>
+                      <dt>漆喰補修工事</dt>
+                      <dd>10,000～15,000円 / ヵ所</dd>
+                    </dl>
+                    <dl>
+                      <dt>棟積み直し工事</dt>
+                      <dd>15,000～20,000円 / ｍ</dd>
+                    </dl>
+                    <dl>
+                      <dt>谷板金交換工事</dt>
+                      <dd>15,000～ 20,000円 / m</dd>
+                    </dl>
+                  </div>
+                  <div class="right">
+                    <dl>
+                      <dt>雨樋掃除</dt>
+                      <dd>15,000円〜</dd>
+                    </dl>
+                    <dl>
+                      <dt class="h_91">破損瓦差し替え</dt>
+                      <dd>1枚から承ります。<br />詳しくはお問い合わせください。</dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion">
+            <h3 class="js-accordion_title">料金の目安</h3>
+            <div class="box" style="display: none;">
+              <div class="layout_flex sb">
+                <div class="left">
+                  <dl>
+                      <dt>漆喰補修工事</dt><dd>10,000～15,000円 / ヵ所</dd>
+                    </dl><dl>
+                      <dt>棟積み直し工事</dt><dd>15,000～20,000円 / ｍ</dd>
+                    </dl><dl>
+                      <dt>谷板金交換工事</dt><dd>15,000～ 20,000円 / m</dd>
+                    </dl>
+                </div>
+                <div class="right">
+                  <dl>
+                      <dt>雨樋掃除</dt><dd>15,000円〜</dd>
+                    </dl><dl>
+                      <dt class="h_91">破損瓦差し替え</dt><dd>1枚から承ります。<br>詳しくはお問い合わせください。</dd>
+                    </dl>
+                </div>
+              </div>
+            </div>
+        </div>
+
         </section>
 
         <div class="homeBg two scrollFadeBottom02 on"></div>
@@ -500,11 +549,11 @@
                 <p class="text sd appear">
                   代表取締役、池田と申します。<br />
                   <br />
-                  私たちの家は、私たちの身体のようなものです。定期的な健康診断やちょっとした不具合の修正を行うことで、大きな問題や手術（大掛かりな工事）を未然に防ぐことができます。当社では、お客様の特定のニーズに合わせて、最適なメンテナンスを提供することを心がけています。<br />
+                  家は私たちの身体と同じ。定期的なケアや小さなトラブルの修繕で、大きな修復の必要性を回避できます。当社は、お客様一人ひとりの要望に応じた最適なメンテナンスを目指します。<br />
                   <br />
-                  私たちの熟練した職人たちは、「適正価格で最大の効果」を追求し、屋根の修理、住宅のリフォーム、水回りの工事など、お住まいのメンテナンスに関する様々な施工を担当しています。お客様の予算や技術的な要求に応じて、最良の解決策を提供することを私たちの強みとしています。<br />
+                  私たちの専門家の手により、「質の良いサービスを適正価格で」をモットーに、屋根修理から住宅リフォーム、解体工事まで、あらゆる施工を行います。お客様の予算や技術的要望に柔軟に応えることが、私たちの最大の強みです。<br />
                   <br />
-                  「水漏れを感じるけれど、どこに相談すればいいのか？」や「工事は大変では？」といった疑問や懸念がある場合、お気軽にご相談ください。私たちの目標は、お客様の快適な生活をサポートすることです。皆様のご支援を賜りたく、心よりお願い申し上げます。
+                  「水漏れをどこに相談すれば？」や「工事は手間では？」のようなご質問や懸念に、私たちとともに解決の道を探しましょう。お客様の安心と快適な暮らしをサポートするのが、私たちの役目です。何卒、皆様の変わらぬご支援をお願い致します。
                 </p>
               </div>
               <div class="sd appear-human">
